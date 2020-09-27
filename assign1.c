@@ -94,24 +94,25 @@ void logToFile(int (*a)[20], int (*b)[20], int indexOfWord, int topDocNumber, FI
     fprintf(logFile, "\n");
 }
 
-void swap(int (*a)[20], int (*b)[20], int row_i, int row_ii, int column, int row){
+void swap(double (*a)[20], int (*b)[20], int row_i, int row_ii, int column, int row){
     /*
         This function worked in tandem with the topRelevantDocs function to sort the table. What this function does is swap rows in a 2d array once the topRelevantDocs function has determined they need to be swapped.  The reason there are two arrays being swapped is because one is an array for the search results and the other is the original array. We determine what rows need to be swapped using the original array and then swap both because the search results array is what we will display to the user later. 
     */
     for(int i = 0;i<column;i++){
-        int intermediate = a[row_i][i];
+        double intermediate = a[row_i][i];
         a[row_i][i]=a[row_ii][i];
         a[row_ii][i]=intermediate;
-        intermediate = b[row_i][0];
-        b[row_i][0] = b[row_ii][0];
-        b[row_ii][0] = intermediate;
     }
+    int intermediate_other = b[row_i][0];
+    b[row_i][0] = b[row_ii][0];
+    b[row_ii][0] = intermediate_other;
 }
 
 int topRelevantDocs(int (*a)[20], int  (*b)[20], int n, int r, int c,  int d, FILE* logFile){
     /*
-        This function worked in tandem with the swap function to sort the table. What this function does is check if one values frequency is larger than another value and decide if the rows need to be swapped or not. If it determines they do it passes that task to the swap function. It determines the frequency using the rowTotals array. Before the comparison is made the double values are generated for comparison. It takes as input two 2d arrays as pointers which are the original array generated with random or file values and the other is the one we will log to the log file. The int n is the number of search results we want, the int d is the index we're searching for and logfile is the file we'll log to. int r and c are row and column. After every document search we log to the file. This is the only place logging is done. 
+        This function worked in tandem with the swap function to sort the table. What this function does is check if one values frequency is larger than another value and decide if the rows need to be swapped or not. If it determines they do it passes that task to the swap function. It determines the frequency values in the frquency array using the rowTotals array and the original array from the initialise. It takes as input two 2d arrays as pointers which are the original array generated with random or file values and the other is the one we will log to the log file. The int n is the number of search results we want, the int d is the index we're searching for and logfile is the file we'll log to. int r and c are row and column. After every document search we log to the file. This is the only place logging is done. 
     */
+    double frequencies[20][20];
     int rowTotals[20][20];
     int tableDuplicate[20][20];
     for (int i = 0; i < r; i++)
@@ -127,16 +128,22 @@ int topRelevantDocs(int (*a)[20], int  (*b)[20], int n, int r, int c,  int d, FI
         }
     }
 
+    for (int i = 0; i < r; i++)
+    {
+        for (int j = 0; j < c; j++)
+        {
+            frequencies[i][j] = (double)(a[i][j]) / (double)(rowTotals[i][0]);
+        }
+    }
+
     for(int counter = 0;counter < r-1; counter++){
         for (int i = 0; i < r - 1; i++)
         {
             for (int j = 0; j < r - i - 1; j++)
             {
-                double double_1 = (double)(a[i][d]) / (double)(rowTotals[i][0]);
-                double double_2 = (double)(a[i+1][d]) / (double)(rowTotals[i+1][0]);
-                if (double_1<double_2)
+                if (frequencies[i][d] < frequencies[i+1][d])
                 {
-                    swap(a, tableDuplicate, i, i + 1, c, r);
+                    swap(frequencies, tableDuplicate, i, i + 1, c, r);
                 }
             }
         }
