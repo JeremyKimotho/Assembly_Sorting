@@ -1,156 +1,58 @@
 The table:
-706
-063
-392
+267
+542
+861
+
+The user searched for index 0
+The user searched for 2 top documents
+
+The search result was:
+2 
+1 
+
+The table:
+267
+542
+861
+
+The user searched for index 2
+The user searched for 1 top documents
+
+The search result was:
+0 
+
+The table:
+267
+542
+861
+
+The user searched for index 2
+The user searched for 0 top documents
+
+The search result was:
+
+The table:
+584
+108
+012
 
 The user searched for index 0
 The user searched for 3 top documents
 
 The search result was:
 0 
-2 
 1 
+2 
 
 The table:
-5842
-1083
-0127
+584
+108
+012
 
 The user searched for index 1
-The user searched for 3 top documents
-
-The search result was:
-0 
-1 
-2 
-
-The table:
-5842
-1083
-0127
-
-The user searched for index 1
-The user searched for 3 top documents
-
-The search result was:
-0 
-1 
-2 
-
-The table:
-5842
-1083
-0127
-
-The user searched for index 3
-The user searched for 3 top documents
-
-The search result was:
-0 
-1 
-2 
-
-The table:
-5842
-1083
-0127
-
-The user searched for index 1
-The user searched for 3 top documents
-
-The search result was:
-0 
-1 
-2 
-
-The table:
-5842
-1083
-0127
-
-The user searched for index 1
-The user searched for 3 top documents
-
-The search result was:
-0 
-1 
-2 
-
-The table:
-5842
-1083
-0127
-
-The user searched for index 1
-The user searched for 3 top documents
-
-The search result was:
-0 
-1 
-2 
-
-The table:
-5842
-1083
-0127
-
-The user searched for index 1
-The user searched for 3 top documents
-
-The search result was:
-0 
-1 
-2 
-
-The table:
-5842
-1083
-0127
-
-The user searched for index 1
-The user searched for 3 top documents
-
-The search result was:
-0 
-1 
-2 
-
-The table:
-5842
-1083
-0127
-
-The user searched for index 1
-The user searched for 3 top documents
-
-The search result was:
-0 
-1 
-2 
-
-The table:
-5842
-1083
-0127
-
-The user searched for index 1
-The user searched for 3 top documents
-
-The search result was:
-0 
-1 
-2 
-
-The table:
-5842
-1083
-0127
-
-The user searched for index 1
-The user searched for 3 top documents
+The user searched for 2 top documents
 
 The search result was:
 0 
 2 
-1 
 

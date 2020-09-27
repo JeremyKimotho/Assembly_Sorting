@@ -1,0 +1,76 @@
+Script started on Sun Sep 27 23:38:49 2020
+
+The default interactive shell is now zsh.
+To update your account to use zsh, please run `chsh -s /bin/zsh`.
+For more details, please visit https://support.apple.com/kb/HT208050.
+[?1034hbash-3.2$ ./assign1
+You must enter input to the command line in the format:
+program_name M N filename(optional)
+bash-3.2$ ./assign1 3 3
+You have not provided a filename therefore a random table will be generated.
+2 6 7 
+5 4 2 
+8 6 1 
+Enter the index of the word you are searching for
+0
+How many top documents do you want to retrieve?
+2
+Sorting completed
+2 
+1 
+Would you like to search again? (y/n)
+y
+2 6 7 
+5 4 2 
+8 6 1 
+Enter the index of the word you are searching for
+2
+How many top documents do you want to retrieve?
+1
+Sorting completed
+0 
+Would you like to search again? (y/n)
+y
+2 6 7 
+5 4 2 
+8 6 1 
+Enter the index of the word you are searching for
+2
+How many top documents do you want to retrieve?
+0
+Sorting completed
+Would you like to search again? (y/n)
+n
+End
+bash-3.2$ ./assign1 3 3 text.txt
+You have provided a filename text.txt therefore the table will be generated from the file
+5 8 4 
+1 0 8 
+0 1 2 
+Enter the index of the word you are searching for
+0
+How many top documents do you want to retrieve?
+3
+Sorting completed
+0 
+1 
+2 
+Would you like to search again? (y/n)
+y
+5 8 4 
+1 0 8 
+0 1 2 
+Enter the index of the word you are searching for
+1
+How many top documents do you want to retrieve?
+2
+Sorting completed
+0 
+2 
+Would you like to search again? (y/n)
+n
+End
+bash-3.2$ exit
+exit
+
+Script done on Sun Sep 27 23:39:46 2020
