@@ -110,7 +110,7 @@ void swap(int (*a)[20], int (*b)[20], int row_i, int row_ii, int column, int row
 
 int topRelevantDocs(int (*a)[20], int  (*b)[20], int n, int r, int c,  int d, FILE* logFile){
     /*
-        This function worked in tandem with the swap function to sort the table. What this function does is check if one values frequency is larger than another value and decide if the rows need to be swapped or not. If it determines they do it passes that task to the swap function. It determines the frequency using the rowTotals array. It takes as input two 2d arrays as pointers which are the original array generated with random or file values and the other is the one we will log to the log file. The int n is the number of search results we want, the int d is the index we're searching for and logfile is the file we'll log to. int r and c are row and column. After every document search we log to the file. This is the only place logging is done. 
+        This function worked in tandem with the swap function to sort the table. What this function does is check if one values frequency is larger than another value and decide if the rows need to be swapped or not. If it determines they do it passes that task to the swap function. It determines the frequency using the rowTotals array. Before the comparison is made the double values are generated for comparison. It takes as input two 2d arrays as pointers which are the original array generated with random or file values and the other is the one we will log to the log file. The int n is the number of search results we want, the int d is the index we're searching for and logfile is the file we'll log to. int r and c are row and column. After every document search we log to the file. This is the only place logging is done. 
     */
     int rowTotals[20][20];
     int tableDuplicate[20][20];
@@ -132,7 +132,9 @@ int topRelevantDocs(int (*a)[20], int  (*b)[20], int n, int r, int c,  int d, FI
         {
             for (int j = 0; j < r - i - 1; j++)
             {
-                if (a[i][d] / rowTotals[i][0] < a[i + 1][d] / rowTotals[i][0])
+                double double_1 = (double)(a[i][d]) / (double)(rowTotals[i][0]);
+                double double_2 = (double)(a[i+1][d]) / (double)(rowTotals[i+1][0]);
+                if (double_1<double_2)
                 {
                     swap(a, tableDuplicate, i, i + 1, c, r);
                 }
